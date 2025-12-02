@@ -1,0 +1,66 @@
+{
+    "name": "express-plus",
+    "version": "0.1.0",
+    "description": "Modern Express.js decorators with TypeScript, DI, and nested controllers",
+    "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        },
+        "./vite": {
+            "types": "./dist/vite-plugin/index.d.ts",
+            "import": "./dist/vite-plugin/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "vite build && tsc --emitDeclarationOnly",
+        "dev": "tsc --watch",
+        "test": "vitest",
+        "test:watch": "vitest --watch",
+        "test:coverage": "vitest --coverage",
+        "test:ui": "vitest --ui",
+        "prepublishOnly": "npm run build"
+    },
+    "keywords": [
+        "express",
+        "decorators",
+        "typescript",
+        "stage3",
+        "vite",
+        "framework",
+        "http",
+        "api"
+    ],
+    "author": "",
+    "license": "MIT",
+    "peerDependencies": {
+        "express": "^4.18.0 || ^5.0.0"
+    },
+    "dependencies": {
+        "@swc/core": "^1.3.100",
+        "pluralize": "^8.0.0",
+        "reflect-metadata": "^0.2.2"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.0",
+        "@types/node": "^20.10.0",
+        "@types/pluralize": "^0.0.33",
+        "@types/supertest": "^6.0.2",
+        "@vitest/coverage-v8": "^1.0.0",
+        "@vitest/ui": "^1.0.0",
+        "express": "^5.0.1",
+        "supertest": "^7.0.0",
+        "typescript": "^5.3.3",
+        "vite": "^5.0.0",
+        "vitest": "^1.0.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}
